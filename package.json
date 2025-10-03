@@ -2,35 +2,40 @@
   "name": "reactvo",
   "version": "1.0.0",
   "private": true,
-  "main": "node_modules/expo/AppEntry.js",
+  "type": "module",
   "scripts": {
-    "android": "expo start --android",
-    "ios": "expo start --ios",
-    "start": "expo start",
-    "web": "expo start --web"
+    "build": "tsc && vite build",
+    "dev": "vite",
+    "preview": "vite preview"
   },
   "dependencies": {
-    "@expo/vector-icons": "latest",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
-    "expo": "~52.0.0",
-    "expo-font": "latest",
-    "expo-status-bar": "latest",
+    "jiti": "latest",
+    "less": "latest",
+    "lightningcss": "latest",
     "lucide-react": "^0.454.0",
     "next": "15.2.4",
     "react": "^19",
     "react-dom": "^19",
-    "react-native": "latest",
+    "sass": "latest",
+    "sass-embedded": "latest",
+    "stylus": "latest",
+    "sugarss": "latest",
     "tailwind-merge": "^2.5.5",
-    "tailwindcss-animate": "^1.0.7"
+    "tailwindcss-animate": "^1.0.7",
+    "terser": "latest",
+    "tsx": "latest",
+    "yaml": "latest"
   },
   "devDependencies": {
-    "@babel/core": "^7.25.0",
     "@types/node": "^22",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "@vitejs/plugin-react": "5.0.4",
     "postcss": "^8.5",
     "tailwindcss": "4.1.14",
-    "typescript": "^5"
+    "typescript": "^5",
+    "vite": "7.1.9"
   }
 }
