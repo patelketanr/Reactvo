@@ -1,8 +1,12 @@
 import "./Sidebar.css"
 
-export function Sidebar() {
+interface SidebarProps {
+  isOpen: boolean
+}
+
+export function Sidebar({ isOpen }: SidebarProps) {
   return (
-    <aside className="sidebar">
+    <aside className={`sidebar ${isOpen ? "sidebar-open" : "sidebar-closed"}`}>
       <nav className="sidebar-nav">
         <a href="#" className="sidebar-link active">
           <span className="sidebar-icon">📊</span>

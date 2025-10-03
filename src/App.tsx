@@ -1,14 +1,23 @@
+"use client"
+
+import { useState } from "react"
 import { Header } from "./components/Header"
 import { Footer } from "./components/Footer"
 import { Sidebar } from "./components/Sidebar"
 import "./App.css"
 
 function App() {
+  const [isSidebarOpen, setIsSidebarOpen] = useState(true)
+
+  const toggleSidebar = () => {
+    setIsSidebarOpen(!isSidebarOpen)
+  }
+
   return (
     <div className="app-container">
-      <Header />
+      <Header onToggleSidebar={toggleSidebar} />
       <div className="main-layout">
-        <Sidebar />
+        <Sidebar isOpen={isSidebarOpen} />
         <main className="main-content">
           <h1>Welcome to ReactVo</h1>
           <p>

@@ -6,9 +6,20 @@
   /* Office text color */
   color: #323130;
   overflow-y: auto;
+  overflow-x: hidden;
   flex-shrink: 0;
   /* Added border like Office */
   border-right: 1px solid #edebe9;
+  /* Improved transition for smooth toggle animation */
+  transition: width 0.2s ease-in-out, min-width 0.2s ease-in-out;
+}
+
+/* Updated closed state for better animation */
+.sidebar-closed {
+  width: 0;
+  min-width: 0;
+  border-right: none;
+  overflow: hidden;
 }
 
 .sidebar-nav {

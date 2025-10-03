@@ -20,6 +20,29 @@
   max-width: 100%;
 }
 
+/* Added menu button styles for sidebar toggle */
+.menu-button {
+  background: none;
+  border: none;
+  color: #323130;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.1s;
+  margin-right: 12px;
+}
+
+.menu-button:hover {
+  background-color: #f3f2f1;
+}
+
+.menu-button:active {
+  background-color: #edebe9;
+}
+
 .logo {
   display: flex;
   align-items: center;
