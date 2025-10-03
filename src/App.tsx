@@ -5,9 +5,10 @@ import { Header } from "./components/Header"
 import { Footer } from "./components/Footer"
 import { Sidebar } from "./components/Sidebar"
 import { TeamPage } from "./pages/TeamPage"
+import { InboxPage } from "./pages/InboxPage"
 import "./App.css"
 
-type PageType = "dashboard" | "projects" | "team" | "analytics" | "settings"
+type PageType = "dashboard" | "projects" | "team" | "analytics" | "settings" | "inbox"
 
 function App() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(true)
@@ -23,6 +24,8 @@ function App() {
 
   const renderPageContent = () => {
     switch (currentPage) {
+      case "inbox":
+        return <InboxPage />
       case "team":
         return <TeamPage />
       case "dashboard":

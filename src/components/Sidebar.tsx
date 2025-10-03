@@ -5,13 +5,20 @@ import "./Sidebar.css"
 interface SidebarProps {
   isOpen: boolean
   currentPage: string
-  onNavigate: (page: "dashboard" | "projects" | "team" | "analytics" | "settings") => void
+  onNavigate: (page: "dashboard" | "projects" | "team" | "analytics" | "settings" | "inbox") => void
 }
 
 export function Sidebar({ isOpen, currentPage, onNavigate }: SidebarProps) {
   return (
     <aside className={`sidebar ${isOpen ? "sidebar-open" : "sidebar-closed"}`}>
       <nav className="sidebar-nav">
+        <button
+          onClick={() => onNavigate("inbox")}
+          className={`sidebar-link ${currentPage === "inbox" ? "active" : ""}`}
+        >
+          <span className="sidebar-icon">📧</span>
+          <span className="sidebar-text">Inbox</span>
+        </button>
         <button
           onClick={() => onNavigate("dashboard")}
           className={`sidebar-link ${currentPage === "dashboard" ? "active" : ""}`}

@@ -1,0 +1,213 @@
+.inbox-page {
+  padding: 0;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  background: #ffffff;
+}
+
+.inbox-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 24px;
+  border-bottom: 1px solid #e1e1e1;
+}
+
+.inbox-header h1 {
+  margin: 0;
+  font-size: 24px;
+  font-weight: 600;
+  color: #323130;
+}
+
+.compose-button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  background: #0078d4;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.compose-button:hover {
+  background: #106ebe;
+}
+
+.compose-icon {
+  font-size: 16px;
+}
+
+.inbox-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 24px;
+  border-bottom: 1px solid #e1e1e1;
+  background: #faf9f8;
+}
+
+.toolbar-left,
+.toolbar-right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.select-all-checkbox {
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+}
+
+.toolbar-button {
+  background: transparent;
+  border: none;
+  padding: 6px 10px;
+  cursor: pointer;
+  font-size: 16px;
+  border-radius: 4px;
+  transition: background 0.2s;
+}
+
+.toolbar-button:hover {
+  background: #e1dfdd;
+}
+
+.selected-count {
+  font-size: 13px;
+  color: #605e5c;
+  margin-left: 4px;
+}
+
+.email-list {
+  flex: 1;
+  overflow-y: auto;
+}
+
+.email-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 24px;
+  border-bottom: 1px solid #edebe9;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.email-item:hover {
+  background: #f3f2f1;
+}
+
+.email-item.selected {
+  background: #e8f4fd;
+}
+
+.email-item.unread {
+  background: #faf9f8;
+}
+
+.email-item.unread .email-sender,
+.email-item.unread .email-subject {
+  font-weight: 600;
+}
+
+.email-checkbox {
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.star-button {
+  background: transparent;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  padding: 0;
+  color: #8a8886;
+  flex-shrink: 0;
+  transition: color 0.2s;
+}
+
+.star-button:hover {
+  color: #605e5c;
+}
+
+.star-button.starred {
+  color: #ffc107;
+}
+
+.email-content {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.email-sender {
+  font-size: 14px;
+  color: #323130;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.email-subject-line {
+  font-size: 13px;
+  color: #605e5c;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.email-subject {
+  color: #323130;
+}
+
+.email-preview {
+  color: #8a8886;
+}
+
+.email-meta {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.attachment-icon {
+  font-size: 14px;
+  color: #605e5c;
+}
+
+.email-timestamp {
+  font-size: 12px;
+  color: #8a8886;
+  white-space: nowrap;
+}
+
+@media (max-width: 768px) {
+  .inbox-header {
+    padding: 16px;
+  }
+
+  .inbox-toolbar {
+    padding: 10px 16px;
+  }
+
+  .email-item {
+    padding: 10px 16px;
+  }
+
+  .email-preview {
+    display: none;
+  }
+}
