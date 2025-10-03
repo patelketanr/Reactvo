@@ -144,13 +144,7 @@ export function InboxPage() {
 
   return (
     <div className="inbox-page">
-      <div className="inbox-header">
-        <h1>Inbox</h1>
-        <button className="compose-button">
-          <span className="compose-icon">✉️</span>
-          Compose
-        </button>
-      </div>
+      
 
       <div className="inbox-toolbar">
         <div className="toolbar-left">
