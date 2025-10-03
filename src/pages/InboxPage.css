@@ -76,7 +76,8 @@
 }
 
 .email-list-pane {
-  width: 400px;
+  min-width: 280px;
+  max-width: 600px;
   border-right: 1px solid #e1e1e1;
   display: flex;
   flex-direction: column;
@@ -424,6 +425,29 @@
   height: 100%;
   color: #8a8886;
   font-size: 16px;
+}
+
+.resize-divider {
+  width: 4px;
+  background: transparent;
+  cursor: col-resize;
+  position: relative;
+  flex-shrink: 0;
+  transition: background 0.2s;
+}
+
+.resize-divider:hover,
+.resize-divider.resizing {
+  background: #0078d4;
+}
+
+.resize-divider::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -4px;
+  right: -4px;
+  bottom: 0;
 }
 
 @media (max-width: 1024px) {

@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useRef, useEffect } from "react"
 import "./InboxPage.css"
 
 interface Email {
@@ -175,6 +175,40 @@ export function InboxPage() {
   const [expandedGroups, setExpandedGroups] = useState<Set<string>>(
     new Set(["today", "yesterday", "thisWeek", "lastWeek"]),
   )
+  const [leftPaneWidth, setLeftPaneWidth] = useState(400)
+  const [isResizing, setIsResizing] = useState(false)
+  const containerRef = useRef<HTMLDivElement>(null)
+
+  useEffect(() => {
+    const handleMouseMove = (e: MouseEvent) => {
+      if (!isResizing || !containerRef.current) return
+
+      const containerRect = containerRef.current.getBoundingClientRect()
+      const newWidth = e.clientX - containerRect.left
+
+      if (newWidth >= 280 && newWidth <= containerRect.width - 400) {
+        setLeftPaneWidth(newWidth)
+      }
+    }
+
+    const handleMouseUp = () => {
+      setIsResizing(false)
+    }
+
+    if (isResizing) {
+      document.addEventListener("mousemove", handleMouseMove)
+      document.addEventListener("mouseup", handleMouseUp)
+      document.body.style.cursor = "col-resize"
+      document.body.style.userSelect = "none"
+    }
+
+    return () => {
+      document.removeEventListener("mousemove", handleMouseMove)
+      document.removeEventListener("mouseup", handleMouseUp)
+      document.body.style.cursor = ""
+      document.body.style.userSelect = ""
+    }
+  }, [isResizing])
 
   const toggleGroup = (group: string) => {
     const newExpanded = new Set(expandedGroups)
@@ -237,8 +271,8 @@ export function InboxPage() {
         </div>
       </div>
 
-      <div className="inbox-content-outlook">
-        <div className="email-list-pane">
+      <div className="inbox-content-outlook" ref={containerRef}>
+        <div className="email-list-pane" style={{ width: `${leftPaneWidth}px` }}>
           <div className="email-list-header">
             <div className="list-header-col">From</div>
             <div className="list-header-col">Subject</div>
@@ -273,6 +307,8 @@ export function InboxPage() {
             ))}
           </div>
         </div>
+
+        <div className={`resize-divider ${isResizing ? "resizing" : ""}`} onMouseDown={() => setIsResizing(true)} />
 
         <div className="email-preview-pane">
           {selectedEmail ? (
