@@ -70,7 +70,7 @@ function App() {
       <Header onToggleSidebar={toggleSidebar} />
       <div className="main-layout">
         <Sidebar isOpen={isSidebarOpen} currentPage={currentPage} onNavigate={handleNavigate} />
-        <main className="main-content">{renderPageContent()}</main>
+        <main className={`main-content ${currentPage === "inbox" ? "no-padding" : ""}`}>{renderPageContent()}</main>
       </div>
       <Footer />
     </div>

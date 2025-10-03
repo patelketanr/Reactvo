@@ -24,6 +24,10 @@
   background-color: #faf9f8;
 }
 
+.main-content.no-padding {
+  padding: 0;
+}
+
 .main-content h1 {
   /* Office heading size */
   font-size: 28px;
