@@ -8,42 +8,66 @@
 .main-layout {
   display: flex;
   flex: 1;
-  margin-top: 64px;
-  margin-bottom: 60px;
+  /* Updated margin for new header height */
+  margin-top: 48px;
+  /* Updated margin for new footer height */
+  margin-bottom: 32px;
   overflow: hidden;
 }
 
 .main-content {
   flex: 1;
-  padding: 2rem;
+  /* Increased padding for Office spacing */
+  padding: 24px 32px;
   overflow-y: auto;
-  background-color: #f5f5f5;
+  /* Office background color */
+  background-color: #faf9f8;
 }
 
 .main-content h1 {
-  font-size: 2rem;
-  margin-bottom: 1rem;
-  color: #333;
+  /* Office heading size */
+  font-size: 28px;
+  /* Increased margin */
+  margin-bottom: 16px;
+  /* Office text color */
+  color: #323130;
+  font-weight: 600;
 }
 
 .main-content p {
-  color: #666;
-  line-height: 1.6;
-  margin-bottom: 1.5rem;
+  /* Office text color */
+  color: #605e5c;
+  /* Office line height */
+  line-height: 1.5;
+  /* Adjusted margin */
+  margin-bottom: 20px;
+  /* Office font size */
+  font-size: 14px;
 }
 
 .content-section {
-  background: white;
-  padding: 1.5rem;
-  margin-bottom: 1.5rem;
-  border-radius: 8px;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  /* Office white background */
+  background: #ffffff;
+  /* Increased padding for Office spacing */
+  padding: 20px 24px;
+  /* Increased margin */
+  margin-bottom: 20px;
+  /* Subtle border radius */
+  border-radius: 2px;
+  /* Office subtle shadow */
+  box-shadow: 0 1.6px 3.6px rgba(0, 0, 0, 0.13);
+  /* Added border like Office cards */
+  border: 1px solid #edebe9;
 }
 
 .content-section h2 {
-  font-size: 1.5rem;
-  margin-bottom: 0.75rem;
-  color: #333;
+  /* Office subheading size */
+  font-size: 20px;
+  /* Adjusted margin */
+  margin-bottom: 12px;
+  /* Office text color */
+  color: #323130;
+  font-weight: 600;
 }
 
 .content-section p {

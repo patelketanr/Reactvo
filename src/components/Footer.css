@@ -3,11 +3,16 @@
   bottom: 0;
   left: 0;
   right: 0;
-  height: 60px;
-  background-color: #1a1a1a;
-  color: white;
+  /* Reduced height for Office style */
+  height: 32px;
+  /* Office light background */
+  background-color: #faf9f8;
+  /* Office text color */
+  color: #605e5c;
   z-index: 1000;
-  box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+  /* Top border instead of shadow */
+  border-top: 1px solid #edebe9;
+  box-shadow: none;
 }
 
 .footer-content {
@@ -15,28 +20,35 @@
   align-items: center;
   justify-content: space-between;
   height: 100%;
-  padding: 0 2rem;
+  /* Reduced padding */
+  padding: 0 16px;
   max-width: 100%;
 }
 
 .footer-content p {
   margin: 0;
-  font-size: 0.9rem;
-  color: #999;
+  /* Smaller font size */
+  font-size: 12px;
+  /* Office gray text */
+  color: #605e5c;
 }
 
 .footer-links {
   display: flex;
-  gap: 1.5rem;
+  /* Reduced gap */
+  gap: 16px;
 }
 
 .footer-link {
-  color: #999;
+  /* Office gray text */
+  color: #605e5c;
   text-decoration: none;
-  font-size: 0.9rem;
-  transition: color 0.2s;
+  /* Smaller font size */
+  font-size: 12px;
+  transition: color 0.1s;
 }
 
 .footer-link:hover {
-  color: white;
+  /* Office blue on hover */
+  color: #0078d4;
 }

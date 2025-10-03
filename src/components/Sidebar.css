@@ -1,41 +1,63 @@
 .sidebar {
-  width: 240px;
-  background-color: #2a2a2a;
-  color: white;
+  /* Adjusted width to match Office sidebar */
+  width: 220px;
+  /* Office light gray background */
+  background-color: #faf9f8;
+  /* Office text color */
+  color: #323130;
   overflow-y: auto;
   flex-shrink: 0;
+  /* Added border like Office */
+  border-right: 1px solid #edebe9;
 }
 
 .sidebar-nav {
   display: flex;
   flex-direction: column;
-  padding: 1rem 0;
+  /* Adjusted padding for Office spacing */
+  padding: 8px 0;
 }
 
 .sidebar-link {
   display: flex;
   align-items: center;
-  gap: 0.75rem;
-  padding: 0.875rem 1.5rem;
-  color: #ccc;
+  /* Reduced gap */
+  gap: 12px;
+  /* Adjusted padding for Office style */
+  padding: 8px 16px;
+  /* Office text color */
+  color: #323130;
   text-decoration: none;
-  transition: background-color 0.2s, color 0.2s;
+  /* Subtle border radius */
+  border-radius: 2px;
+  /* Added margin for spacing */
+  margin: 0 8px;
+  transition: background-color 0.1s;
 }
 
 .sidebar-link:hover {
-  background-color: #3a3a3a;
-  color: white;
+  /* Office hover background */
+  background-color: #f3f2f1;
+  color: #323130;
 }
 
 .sidebar-link.active {
-  background-color: #3b82f6;
-  color: white;
+  /* Office active state with light blue */
+  background-color: #e1f5fe;
+  /* Office blue text */
+  color: #0078d4;
+  /* Added left border accent */
+  border-left: 3px solid #0078d4;
+  padding-left: 13px;
 }
 
 .sidebar-icon {
-  font-size: 1.25rem;
+  /* Adjusted icon size */
+  font-size: 18px;
 }
 
 .sidebar-text {
-  font-size: 0.95rem;
+  /* Office font size */
+  font-size: 14px;
+  font-weight: 400;
 }
