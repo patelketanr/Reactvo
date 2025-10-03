@@ -1,0 +1,160 @@
+.team-page {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0;
+}
+
+.team-hero {
+  text-align: center;
+  padding: 48px 24px;
+  background-color: #faf9f8;
+  border-bottom: 1px solid #edebe9;
+}
+
+.team-title {
+  font-size: 42px;
+  font-weight: 600;
+  color: #323130;
+  margin: 0 0 16px 0;
+  font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, sans-serif;
+  line-height: 1.2;
+}
+
+.team-subtitle {
+  font-size: 18px;
+  color: #605e5c;
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.6;
+  font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 32px;
+  padding: 48px 24px;
+}
+
+.team-card {
+  background-color: #ffffff;
+  border: 1px solid #edebe9;
+  border-radius: 4px;
+  overflow: hidden;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.team-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.team-card-image-wrapper {
+  width: 100%;
+  height: 300px;
+  overflow: hidden;
+  background-color: #f3f2f1;
+}
+
+.team-card-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.team-card-content {
+  padding: 24px;
+}
+
+.team-card-name {
+  font-size: 20px;
+  font-weight: 600;
+  color: #323130;
+  margin: 0 0 8px 0;
+  font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.team-card-role {
+  font-size: 14px;
+  color: #0078d4;
+  margin: 0 0 12px 0;
+  font-weight: 500;
+  font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.team-card-bio {
+  font-size: 14px;
+  color: #605e5c;
+  line-height: 1.6;
+  margin: 0;
+  font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.team-cta {
+  text-align: center;
+  padding: 64px 24px;
+  background-color: #faf9f8;
+  border-top: 1px solid #edebe9;
+}
+
+.team-cta-title {
+  font-size: 32px;
+  font-weight: 600;
+  color: #323130;
+  margin: 0 0 16px 0;
+  font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.team-cta-text {
+  font-size: 16px;
+  color: #605e5c;
+  max-width: 600px;
+  margin: 0 auto 32px auto;
+  line-height: 1.6;
+  font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.team-cta-button {
+  background-color: #0078d4;
+  color: #ffffff;
+  border: none;
+  padding: 12px 32px;
+  font-size: 15px;
+  font-weight: 600;
+  border-radius: 2px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.team-cta-button:hover {
+  background-color: #106ebe;
+}
+
+.team-cta-button:active {
+  background-color: #005a9e;
+}
+
+@media (max-width: 768px) {
+  .team-title {
+    font-size: 32px;
+  }
+
+  .team-subtitle {
+    font-size: 16px;
+  }
+
+  .team-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+    padding: 32px 16px;
+  }
+
+  .team-cta {
+    padding: 48px 16px;
+  }
+
+  .team-cta-title {
+    font-size: 24px;
+  }
+}

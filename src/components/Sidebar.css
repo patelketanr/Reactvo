@@ -44,6 +44,14 @@
   /* Added margin for spacing */
   margin: 0 8px;
   transition: background-color 0.1s;
+  /* Added button-specific styles for navigation */
+  background: none;
+  border: none;
+  width: calc(100% - 16px);
+  text-align: left;
+  cursor: pointer;
+  font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 14px;
 }
 
 .sidebar-link:hover {
