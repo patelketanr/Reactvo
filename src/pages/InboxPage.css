@@ -1,213 +1,456 @@
-.inbox-page {
-  padding: 0;
-  height: 100%;
+.inbox-page-outlook {
   display: flex;
   flex-direction: column;
+  height: 100%;
   background: #ffffff;
+  font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, sans-serif;
 }
 
-.inbox-header {
+.inbox-toolbar-outlook {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px 24px;
-  border-bottom: 1px solid #e1e1e1;
-}
-
-.inbox-header h1 {
-  margin: 0;
-  font-size: 24px;
-  font-weight: 600;
-  color: #323130;
-}
-
-.compose-button {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  padding: 10px 20px;
-  background: #0078d4;
-  color: white;
-  border: none;
-  border-radius: 4px;
-  font-size: 14px;
-  font-weight: 600;
-  cursor: pointer;
-  transition: background 0.2s;
-}
-
-.compose-button:hover {
-  background: #106ebe;
-}
-
-.compose-icon {
-  font-size: 16px;
-}
-
-.inbox-toolbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 12px 24px;
+  padding: 8px 16px;
   border-bottom: 1px solid #e1e1e1;
   background: #faf9f8;
 }
 
-.toolbar-left,
-.toolbar-right {
+.toolbar-left-outlook {
   display: flex;
-  align-items: center;
-  gap: 12px;
+  gap: 4px;
 }
 
-.select-all-checkbox {
-  width: 18px;
-  height: 18px;
-  cursor: pointer;
-}
-
-.toolbar-button {
+.tab-button {
+  padding: 6px 16px;
   background: transparent;
   border: none;
-  padding: 6px 10px;
+  border-bottom: 2px solid transparent;
+  font-size: 14px;
+  color: #323130;
   cursor: pointer;
-  font-size: 16px;
+  transition: all 0.2s;
+}
+
+.tab-button.active {
+  border-bottom-color: #0078d4;
+  color: #0078d4;
+  font-weight: 600;
+}
+
+.tab-button:hover:not(.active) {
+  background: #f3f2f1;
+}
+
+.toolbar-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.action-button {
+  padding: 6px 12px;
+  background: transparent;
+  border: 1px solid #e1e1e1;
   border-radius: 4px;
-  transition: background 0.2s;
-}
-
-.toolbar-button:hover {
-  background: #e1dfdd;
-}
-
-.selected-count {
   font-size: 13px;
-  color: #605e5c;
-  margin-left: 4px;
+  color: #323130;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  transition: all 0.2s;
 }
 
-.email-list {
+.action-button:hover {
+  background: #f3f2f1;
+  border-color: #d1d1d1;
+}
+
+.action-button input[type="checkbox"] {
+  margin: 0;
+}
+
+.inbox-content-outlook {
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+}
+
+.email-list-pane {
+  width: 400px;
+  border-right: 1px solid #e1e1e1;
+  display: flex;
+  flex-direction: column;
+  background: #faf9f8;
+}
+
+.email-list-header {
+  display: grid;
+  grid-template-columns: 1fr 2fr 100px;
+  padding: 8px 16px;
+  border-bottom: 1px solid #e1e1e1;
+  background: #ffffff;
+  font-size: 12px;
+  font-weight: 600;
+  color: #605e5c;
+}
+
+.list-header-col {
+  padding: 4px 8px;
+}
+
+.email-list-scroll {
   flex: 1;
   overflow-y: auto;
 }
 
-.email-item {
+.email-group {
+  margin-bottom: 0;
+}
+
+.group-header {
+  width: 100%;
   display: flex;
   align-items: center;
-  gap: 12px;
-  padding: 12px 24px;
-  border-bottom: 1px solid #edebe9;
-  cursor: pointer;
-  transition: background 0.15s;
-}
-
-.email-item:hover {
+  gap: 8px;
+  padding: 8px 16px;
   background: #f3f2f1;
-}
-
-.email-item.selected {
-  background: #e8f4fd;
-}
-
-.email-item.unread {
-  background: #faf9f8;
-}
-
-.email-item.unread .email-sender,
-.email-item.unread .email-subject {
-  font-weight: 600;
-}
-
-.email-checkbox {
-  width: 18px;
-  height: 18px;
-  cursor: pointer;
-  flex-shrink: 0;
-}
-
-.star-button {
-  background: transparent;
   border: none;
-  font-size: 20px;
+  border-bottom: 1px solid #e1e1e1;
+  font-size: 13px;
+  font-weight: 600;
+  color: #323130;
   cursor: pointer;
-  padding: 0;
-  color: #8a8886;
-  flex-shrink: 0;
-  transition: color 0.2s;
+  text-align: left;
+  transition: background 0.2s;
 }
 
-.star-button:hover {
+.group-header:hover {
+  background: #edebe9;
+}
+
+.group-toggle {
+  font-size: 12px;
   color: #605e5c;
 }
 
-.star-button.starred {
-  color: #ffc107;
+.group-label {
+  flex: 1;
 }
 
-.email-content {
+.email-item-outlook {
+  display: grid;
+  grid-template-columns: 24px 32px 1fr 2fr 80px;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  border-bottom: 1px solid #edebe9;
+  cursor: pointer;
+  transition: background 0.15s;
+  background: #ffffff;
+}
+
+.email-item-outlook:hover {
+  background: #f3f2f1;
+}
+
+.email-item-outlook.selected {
+  background: #cfe4fa;
+}
+
+.email-item-outlook.unread {
+  background: #f9f9f9;
+  font-weight: 600;
+}
+
+.email-checkbox-outlook {
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+}
+
+.email-avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 12px;
+  font-weight: 600;
+  flex-shrink: 0;
+}
+
+.email-from {
+  font-size: 13px;
+  color: #323130;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.email-subject-outlook {
+  font-size: 13px;
+  color: #0078d4;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.email-time {
+  font-size: 12px;
+  color: #605e5c;
+  text-align: right;
+  white-space: nowrap;
+}
+
+.email-preview-pane {
   flex: 1;
-  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  background: #ffffff;
+  overflow-y: auto;
+}
+
+.preview-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 24px;
+  border-bottom: 1px solid #e1e1e1;
+}
+
+.preview-subject {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 600;
+  color: #323130;
+}
+
+.summarize-button {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 16px;
+  background: #ffffff;
+  border: 1px solid #e1e1e1;
+  border-radius: 4px;
+  font-size: 14px;
+  color: #323130;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.summarize-button:hover {
+  background: #f3f2f1;
+  border-color: #d1d1d1;
+}
+
+.summarize-icon {
+  font-size: 16px;
+}
+
+.preview-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 16px 24px;
+  border-bottom: 1px solid #e1e1e1;
+}
+
+.sender-info {
+  display: flex;
+  gap: 12px;
+}
+
+.sender-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 14px;
+  font-weight: 600;
+  flex-shrink: 0;
+}
+
+.sender-details {
   display: flex;
   flex-direction: column;
   gap: 4px;
 }
 
-.email-sender {
+.sender-name {
   font-size: 14px;
+  font-weight: 600;
   color: #323130;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
 }
 
-.email-subject-line {
+.recipient-info {
+  font-size: 13px;
+  color: #605e5c;
+}
+
+.recipient-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  color: #0078d4;
+}
+
+.email-date {
   font-size: 13px;
   color: #605e5c;
   white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
 }
 
-.email-subject {
+.preview-actions {
+  display: flex;
+  gap: 8px;
+  padding: 12px 24px;
+  border-bottom: 1px solid #e1e1e1;
+}
+
+.preview-action-btn {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: 1px solid #e1e1e1;
+  border-radius: 4px;
+  font-size: 16px;
+  color: #323130;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.preview-action-btn:hover {
+  background: #f3f2f1;
+  border-color: #d1d1d1;
+}
+
+.preview-body {
+  flex: 1;
+  padding: 24px;
+  overflow-y: auto;
+}
+
+.email-warning {
+  padding: 12px;
+  background: #fff4ce;
+  border: 1px solid #ffb900;
+  border-radius: 4px;
+  font-size: 13px;
+  color: #323130;
+  margin-bottom: 24px;
+}
+
+.email-content-body {
+  font-size: 14px;
+  line-height: 1.6;
   color: #323130;
 }
 
-.email-preview {
-  color: #8a8886;
+.email-logo {
+  margin-bottom: 16px;
 }
 
-.email-meta {
+.email-content-body h3 {
+  font-size: 14px;
+  font-weight: 600;
+  color: #605e5c;
+  margin: 0 0 8px 0;
+}
+
+.email-content-body h1 {
+  font-size: 28px;
+  font-weight: 700;
+  color: #323130;
+  margin: 0 0 12px 0;
+}
+
+.meeting-info {
+  font-size: 13px;
+  color: #605e5c;
+  margin-bottom: 24px;
+}
+
+.meeting-info a {
+  color: #0078d4;
+  text-decoration: none;
+}
+
+.meeting-info a:hover {
+  text-decoration: underline;
+}
+
+.email-content-body h4 {
+  font-size: 14px;
+  font-weight: 600;
+  color: #323130;
+  margin: 24px 0 12px 0;
+}
+
+.action-items {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.action-items li {
+  padding: 12px 0;
+  border-bottom: 1px solid #edebe9;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.action-items li:last-child {
+  border-bottom: none;
+}
+
+.action-items strong {
+  color: #323130;
+  font-weight: 600;
+}
+
+.no-email-selected {
   display: flex;
   align-items: center;
-  gap: 8px;
-  flex-shrink: 0;
-}
-
-.attachment-icon {
-  font-size: 14px;
-  color: #605e5c;
-}
-
-.email-timestamp {
-  font-size: 12px;
+  justify-content: center;
+  height: 100%;
   color: #8a8886;
-  white-space: nowrap;
+  font-size: 16px;
+}
+
+@media (max-width: 1024px) {
+  .email-list-pane {
+    width: 320px;
+  }
+
+  .email-list-header {
+    grid-template-columns: 1fr 1.5fr 80px;
+  }
+
+  .email-item-outlook {
+    grid-template-columns: 24px 32px 0.8fr 1.5fr 70px;
+  }
 }
 
 @media (max-width: 768px) {
-  .inbox-header {
-    padding: 16px;
+  .inbox-content-outlook {
+    flex-direction: column;
   }
 
-  .inbox-toolbar {
-    padding: 10px 16px;
+  .email-list-pane {
+    width: 100%;
+    height: 50%;
   }
 
-  .email-item {
-    padding: 10px 16px;
-  }
-
-  .email-preview {
-    display: none;
+  .email-preview-pane {
+    height: 50%;
   }
 }
